@@ -4,7 +4,8 @@ import {  Platform,
           StyleSheet, 
           Text, 
           View,
-          TextInput
+          TextInput,
+          Button
         } from 'react-native';
 
 const instructions = Platform.select({
@@ -17,19 +18,27 @@ const instructions = Platform.select({
 type Props = {};
 export default class App extends Component<Props> {
   state = {
-    placeName = ""
+    placeName: ""
   };
 
   placeNameChangeHandler = val => {
     this.setState({
       placeName: val
     });
-  }
+  };
   
   render() {
     return (
       <View style={styles.container}>
-        <TextInput style={styles.inputtext}/>
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.inputtext}
+          placeholder="Hello animesh how are you "
+          value   = {this.state.placeName}
+          onChange = {this.placeNameChangeHandler} 
+          style={styles.placeInput}
+        />
+        <Button title="add" style={styles.placebutton} />
+        </View>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
@@ -41,14 +50,14 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    margin: 10
   },
   instructions: {
     textAlign: 'center',
@@ -56,7 +65,22 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   inputtext : {
-    height : 20,
-    width : 20
+    height : 50,
+    width : 250,
+    // backgroundColor: "red",
+    borderColor: "green",
+    borderWidth: 2,
+    borderRadius: 20,
+  },
+  inputContainer: {
+    // flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  placeInput: {
+    width: "70%"
+  }, 
+  placeButton: {
+    width: "30%"
   }
 });
