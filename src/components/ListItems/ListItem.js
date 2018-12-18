@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 const listItems = (props) => {
-   return <View style={styles.listItems}>
+   return <View style={styles.listItem}>
         <Text>{props.placeName}</Text>
     </View>
 };
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         width: "100%",
         padding: 10,
         backgroundColor: '#eee',
-        marginBottom: "#eee"
+        marginBottom: 5
     }
 });
 

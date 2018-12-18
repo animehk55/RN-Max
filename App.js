@@ -46,7 +46,8 @@ export default class App extends Component {
   
   render() {
     const placeOutput = this.state.places.map(( place, i ) => {
-     return <ListItem key={i} placeName={place} />
+     return <ListItem 
+     key={i} placeName={place} />
     //  return <ListItem placeName='place' />
     });
     
@@ -75,11 +76,11 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // padding: 26,
-    // justifyContent: 'center',
+    padding: 26,
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
-    // alignItems: "center",
+    alignItems: "center",
     justifyContent: "flex-start"
   },
   welcome: {
@@ -95,25 +96,28 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-  inputtext : {
-    height : 20,
-    width : 20,
-    borderColor: "#efffbd",
-    borderRadius: 20,
-    color: "#ff3478"
+  inputText : {
+    height : 50,
+    width : 250,
+    borderColor: "green",
+    // borderRadius: 20,
+    color: "black",
+    // backgroundColor: "red",
+    borderColor: 'red'
+
   },
   inputContainer: {
-    // flex: 1,/s
-    // width: "100%",
+    // flex: 1,
+    width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center"
   },
   placeInput: {
-    // width: "70%"
+    width: "70%"
   },
   placeButton: {
-    // width: "30%"
+    width: "30%"
   },
   listContainer : {
     width: "100%"
