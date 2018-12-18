@@ -1,10 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableNativeFeedback } from 'react-native';
 
 const listItems = (props) => {
-   return <View style={styles.listItem}>
+   return (
+   <TouchableNativeFeedback onPress={props.onItemPressed}>
+   
+       <View style={styles.listItem} >
         <Text>{props.placeName}</Text>
-    </View>
+        </View>
+   </TouchableNativeFeedback>
+   );
 };
 
 const styles = StyleSheet.create({
@@ -13,6 +18,9 @@ const styles = StyleSheet.create({
         padding: 10,
         backgroundColor: '#eee',
         marginBottom: 5
+    },
+    allSide: {
+        // borderWidth: 2
     }
 });
 
