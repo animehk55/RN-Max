@@ -7,6 +7,7 @@ import {  Platform,
           TextInput,
           Button
         } from 'react-native';
+import ListItem from './src/components/ListItems/ListItem'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -15,8 +16,11 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
+  constructor(props){
+    super(props);
+    this.placeSubmitHandler=this.placeSubmitHandler.bind(this);
+  }
   state = {
     placeName: "",
     places: []
@@ -29,9 +33,9 @@ export default class App extends Component<Props> {
   };
   
   placeSubmitHandler = () => {
-     if (this.state.placeName.trim() === "") {
-       return;
-     }
+    //  if (this.state.placeName.trim() === "") {
+    //    return;
+    //  }
 
      this.setState(prevState => {
        return {
@@ -41,9 +45,10 @@ export default class App extends Component<Props> {
   };
   
   render() {
-    const placeOutput = this.state.places.map(( place, i ) => (
-      <Text key= {i}>{place}</Text>
-    ));
+    const placeOutput = this.state.places.map(( place, i ) => {
+     return <ListItem key={i} placeName={place} />
+    //  return <ListItem placeName='place' />
+    });
     
     return (
       <View style={styles.container}>
@@ -54,16 +59,16 @@ export default class App extends Component<Props> {
           onChangeText={this.placeNameChangedHandler}
           style={styles.inputText}
         />
-        <Button title="Add" style={styles.placeButton} onPress={this.placeSubmitHandler} />
+        <Button title="Add" style={styles.placeButton} onPress={()=>this.placeSubmitHandler()} />
       </View>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <View>
+        <View style= {styles.listContainer} >
           {placeOutput}
         </View>
       </View>
-    );
+    ); 
   }
 }
 
@@ -110,7 +115,7 @@ const styles = StyleSheet.create({
   placeButton: {
     // width: "30%"
   },
-  textColor : {
-    // color: "#1500cc"
+  listContainer : {
+    width: "100%"
   }
 });
