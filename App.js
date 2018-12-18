@@ -41,6 +41,10 @@ export default class App extends Component<Props> {
   };
   
   render() {
+    const placeOutput = this.state.places.map(( place, i ) => (
+      <Text key= {i}>{place}</Text>
+    ));
+    
     return (
       <View style={styles.container}>
       <View style={styles.inputContainer}>
@@ -55,6 +59,9 @@ export default class App extends Component<Props> {
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
+        <View>
+          {placeOutput}
+        </View>
       </View>
     );
   }
