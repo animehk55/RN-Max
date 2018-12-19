@@ -17,12 +17,14 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "#eee",
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    borderRadius: 30 
   },
   placeImage: {
       marginRight: 8,
       height: 30,
-      width: 30
+      width: 30,
+      borderRadius: 50
   }
 });
 
