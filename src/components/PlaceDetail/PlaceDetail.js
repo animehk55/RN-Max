@@ -26,7 +26,7 @@ const placeDetail = props => {
         </View>
       </View>
     </Modal>
-  );
+  );                                                                         
 };
 
 const styles = StyleSheet.create({
