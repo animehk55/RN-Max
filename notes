@@ -11,24 +11,10 @@ chmod 755 android/gradlew
 if want to check all repository from remote cloned one
 git branch -a
 ----------------------------------------------------------------------------------------------------------------------------------------------
-actions: are messages that we dispatch
-reducers : are the place where we accept these messages  and change out state
-in actions we handle side effects
 ----------------------------------------------------------------------------------------------------------------------------------------------
-actions are just javascript objects and action creator serves as a factory which spits out actions so it has to spit out javascript object.
 ----------------------------------------------------------------------------------------------------------------------------------------------
-https://facebook.github.io/react-native/docs/debugging.html
-https://github.com/jhen0409/react-native-debugger
-https://github.com/oblador/react-native-vector-icons
-https://github.com/wix/react-native-navigation/tree/v1
-https://wix.github.io/react-native-navigation/#/
 ----------------------------------------------------------------------------------------------------------------------------------------------
-see video 60, 67 again
-npm run android 
-to rebuild the project
-npm install
 ----------------------------------------------------------------------------------------------------------------------------------------------
-react-native documentation
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------
